@@ -34,8 +34,8 @@ public class PostServiceImpl implements PostService {
     @Override
     public Post updatePost(Long id, Post postDetails) {
         Post post = postRepository.findById(id).orElseThrow(() -> new RuntimeException("Post not found"));
-        post.setTitle(postDetails.getTitle());
-        post.setContent(postDetails.getContent());
+        post.updateTitle(postDetails.getTitle());
+        post.updateContent(postDetails.getContent());
         return postRepository.save(post);
     }
 
@@ -44,10 +44,10 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new RuntimeException("Post not found"));
 
         if (updates.containsKey("title")) {
-            post.setTitle((String) updates.get("title"));
+            post.updateTitle((String) updates.get("title"));
         }
         if (updates.containsKey("content")) {
-            post.setContent((String) updates.get("content"));
+            post.updateContent((String) updates.get("content"));
         }
 
         return postRepository.save(post);
@@ -57,5 +57,4 @@ public class PostServiceImpl implements PostService {
     public void deletePost(Long id) {
         postRepository.deleteById(id);
     }
-
 }
