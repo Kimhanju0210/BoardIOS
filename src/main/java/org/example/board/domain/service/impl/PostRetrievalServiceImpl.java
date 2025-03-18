@@ -12,8 +12,11 @@ import java.util.Optional;
 @Service
 public class PostRetrievalServiceImpl implements PostRetrievalService {
 
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+
+    public PostRetrievalServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public List<Post> getAllPosts() {
