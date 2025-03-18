@@ -6,7 +6,7 @@ api:
 
 spring:
   datasource:
-    url: ${URL}
+    url: ${DB_URL}
     username: ${NAME}
     password: ${PASSWORD}
     driver-class-name: ${DRIVER}
