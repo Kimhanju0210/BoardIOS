@@ -4,9 +4,7 @@ import org.example.board.domain.entity.Post;
 import org.example.board.domain.service.PostCreationService;
 import org.example.board.domain.service.PostDeletionService;
 import org.example.board.domain.service.PostRetrievalService;
-import org.example.board.domain.service.PostService;
 import org.example.board.domain.service.PostUpdateService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
