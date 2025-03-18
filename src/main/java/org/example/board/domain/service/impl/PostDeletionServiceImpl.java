@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PostDeletionServiceImpl implements PostDeletionService {
 
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+
+    public PostDeletionServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public void deletePost(Long id) {

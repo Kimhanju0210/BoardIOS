@@ -9,8 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PostCreationServiceImpl implements PostCreationService {
 
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+
+    public PostCreationServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public Post createPost(Post post) {

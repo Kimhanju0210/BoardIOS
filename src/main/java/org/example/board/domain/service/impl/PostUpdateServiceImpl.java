@@ -11,8 +11,11 @@ import java.util.Map;
 @Service
 public class PostUpdateServiceImpl implements PostUpdateService {
 
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+
+    public PostUpdateServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public Post updatePost(Long id, Post postDetails) {
