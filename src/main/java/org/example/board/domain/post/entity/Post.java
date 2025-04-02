@@ -1,7 +1,10 @@
-package org.example.board.domain.entity;
+package org.example.board.domain.post.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
@@ -27,5 +30,4 @@ public class Post {
     public void updateContent(String content) {
         this.content = content;
     }
-
 }

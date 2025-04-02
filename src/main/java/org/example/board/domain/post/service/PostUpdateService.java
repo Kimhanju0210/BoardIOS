@@ -1,6 +1,6 @@
-package org.example.board.domain.service;
+package org.example.board.domain.post.service;
 
-import org.example.board.domain.entity.Post;
+import org.example.board.domain.post.entity.Post;
 
 import java.util.Map;
 

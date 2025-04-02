@@ -1,10 +1,10 @@
-package org.example.board.domain.controller;
+package org.example.board.domain.post.controller;
 
-import org.example.board.domain.entity.Post;
-import org.example.board.domain.service.PostCreationService;
-import org.example.board.domain.service.PostDeletionService;
-import org.example.board.domain.service.PostRetrievalService;
-import org.example.board.domain.service.PostUpdateService;
+import org.example.board.domain.post.entity.Post;
+import org.example.board.domain.post.service.PostCreationService;
+import org.example.board.domain.post.service.PostDeletionService;
+import org.example.board.domain.post.service.PostRetrievalService;
+import org.example.board.domain.post.service.PostUpdateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -60,5 +60,4 @@ public class PostController {
         postDeletionService.deletePost(id);
         return ResponseEntity.noContent().build();
     }
-
 }

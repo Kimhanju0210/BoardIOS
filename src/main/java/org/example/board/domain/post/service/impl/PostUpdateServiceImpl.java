@@ -1,8 +1,8 @@
-package org.example.board.domain.service.impl;
+package org.example.board.domain.post.service.impl;
 
-import org.example.board.domain.entity.Post;
-import org.example.board.domain.repository.PostRepository;
-import org.example.board.domain.service.PostUpdateService;
+import org.example.board.domain.post.entity.Post;
+import org.example.board.domain.post.repository.PostRepository;
+import org.example.board.domain.post.service.PostUpdateService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

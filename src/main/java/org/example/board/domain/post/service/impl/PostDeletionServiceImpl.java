@@ -1,7 +1,7 @@
-package org.example.board.domain.service.impl;
+package org.example.board.domain.post.service.impl;
 
-import org.example.board.domain.repository.PostRepository;
-import org.example.board.domain.service.PostDeletionService;
+import org.example.board.domain.post.repository.PostRepository;
+import org.example.board.domain.post.service.PostDeletionService;
 import org.springframework.stereotype.Service;
 
 @Service
