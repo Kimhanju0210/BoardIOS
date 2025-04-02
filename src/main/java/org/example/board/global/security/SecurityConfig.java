@@ -1,4 +1,4 @@
-package org.example.board.domain.security;
+package org.example.board.global.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +29,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/posts/**").permitAll()
                 .requestMatchers(HttpMethod.PATCH, "/posts/**").permitAll()
                 .requestMatchers(HttpMethod.DELETE, "/posts/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/image").permitAll()
+                .requestMatchers(HttpMethod.GET, "/image/**").permitAll()
                 .anyRequest().authenticated()
             );
         
