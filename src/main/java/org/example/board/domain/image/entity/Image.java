@@ -17,5 +17,14 @@ public class Image {
     private Long id;
 
     @Column(nullable = false)
-    private String contentImage;
+    private String originalFileName;
+
+    @Column(nullable = false)
+    private String storedFileName;
+
+    @Column(nullable = false)
+    private String filePath;
+
+    @Column(nullable = false)
+    private String fileType;
 } 
