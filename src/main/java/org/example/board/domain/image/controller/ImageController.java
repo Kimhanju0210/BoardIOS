@@ -1,5 +1,6 @@
 package org.example.board.domain.image.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.image.entity.Image;
 import org.example.board.domain.image.service.ImageDeletionService;
 import org.example.board.domain.image.service.ImageRetrievalService;
@@ -12,19 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/image")
+@RequiredArgsConstructor
 public class ImageController {
 
     private final ImageUploadService imageUploadService;
     private final ImageRetrievalService imageRetrievalService;
     private final ImageDeletionService imageDeletionService;
-
-    public ImageController(ImageUploadService imageUploadService,
-                         ImageRetrievalService imageRetrievalService,
-                         ImageDeletionService imageDeletionService) {
-        this.imageUploadService = imageUploadService;
-        this.imageRetrievalService = imageRetrievalService;
-        this.imageDeletionService = imageDeletionService;
-    }
 
     @PostMapping
     public ResponseEntity<Image> uploadImage(@RequestParam("file") MultipartFile file) throws Exception {
