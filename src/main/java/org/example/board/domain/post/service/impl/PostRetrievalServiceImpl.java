@@ -1,5 +1,6 @@
 package org.example.board.domain.post.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.post.entity.Post;
 import org.example.board.domain.post.repository.PostRepository;
 import org.example.board.domain.post.service.PostRetrievalService;
@@ -9,13 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class PostRetrievalServiceImpl implements PostRetrievalService {
 
     private final PostRepository postRepository;
-
-    public PostRetrievalServiceImpl(PostRepository postRepository) {
-        this.postRepository = postRepository;
-    }
 
     @Override
     public List<Post> getAllPosts() {
