@@ -1,5 +1,6 @@
 package org.example.board.domain.image.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.image.entity.Image;
 import org.example.board.domain.image.repository.ImageRepository;
 import org.example.board.domain.image.service.ImageRetrievalService;
@@ -10,13 +11,10 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class ImageRetrievalServiceImpl implements ImageRetrievalService {
 
     private final ImageRepository imageRepository;
-
-    public ImageRetrievalServiceImpl(ImageRepository imageRepository) {
-        this.imageRepository = imageRepository;
-    }
 
     @Override
     public List<Image> getAllImages() {
