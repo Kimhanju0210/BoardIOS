@@ -1,5 +1,6 @@
 package org.example.board.domain.post.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.post.entity.Post;
 import org.example.board.domain.post.service.PostCreationService;
 import org.example.board.domain.post.service.PostDeletionService;
@@ -14,20 +15,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/posts")
+@RequiredArgsConstructor
 public class PostController {
 
     private final PostRetrievalService postRetrievalService;
     private final PostCreationService postCreationService;
     private final PostUpdateService postUpdateService;
     private final PostDeletionService postDeletionService;
-
-    public PostController(PostRetrievalService postRetrievalService, PostCreationService postCreationService,
-                          PostUpdateService postUpdateService, PostDeletionService postDeletionService) {
-        this.postRetrievalService = postRetrievalService;
-        this.postCreationService = postCreationService;
-        this.postUpdateService = postUpdateService;
-        this.postDeletionService = postDeletionService;
-    }
 
     @GetMapping
     public List<Post> getAllPosts() {
