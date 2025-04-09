@@ -1,5 +1,6 @@
 package org.example.board.domain.image.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.image.entity.Image;
 import org.example.board.domain.image.repository.ImageRepository;
 import org.example.board.domain.image.service.ImageDeletionService;
@@ -7,13 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@RequiredArgsConstructor
 public class ImageDeletionServiceImpl implements ImageDeletionService {
 
     private final ImageRepository imageRepository;
-
-    public ImageDeletionServiceImpl(ImageRepository imageRepository) {
-        this.imageRepository = imageRepository;
-    }
 
     @Override
     @Transactional
