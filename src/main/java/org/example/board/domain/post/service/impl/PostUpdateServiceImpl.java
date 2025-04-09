@@ -1,5 +1,6 @@
 package org.example.board.domain.post.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import org.example.board.domain.post.entity.Post;
 import org.example.board.domain.post.repository.PostRepository;
 import org.example.board.domain.post.service.PostUpdateService;
@@ -8,13 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class PostUpdateServiceImpl implements PostUpdateService {
 
     private final PostRepository postRepository;
-
-    public PostUpdateServiceImpl(PostRepository postRepository) {
-        this.postRepository = postRepository;
-    }
 
     @Override
     public Post updatePost(Long id, Post postDetails) {
