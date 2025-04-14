@@ -5,6 +5,7 @@ import org.example.board.domain.image.entity.Image;
 import org.example.board.domain.image.repository.ImageRepository;
 import org.example.board.domain.image.service.ImageUploadService;
 import org.example.board.global.util.FileUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,7 +17,9 @@ import java.io.IOException;
 public class ImageUploadServiceImpl implements ImageUploadService {
 
     private final ImageRepository imageRepository;
-    private final String uploadDir = "uploads";  // 이미지가 저장될 서버 디렉토리
+
+    @Value("${IMAGE_UPLOAD_DIR}")
+    private String uploadDir;  // 이미지가 저장될 서버 디렉토리
 
     @Override
     @Transactional
