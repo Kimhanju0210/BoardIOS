@@ -31,6 +31,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.DELETE, "/posts/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/image").permitAll()
                 .requestMatchers(HttpMethod.GET, "/image/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
+                .requestMatchers(HttpMethod.DELETE, "/images/**").permitAll()
+                .requestMatchers(HttpMethod.DELETE, "/image/**").permitAll()
                 .anyRequest().authenticated()
             );
         
