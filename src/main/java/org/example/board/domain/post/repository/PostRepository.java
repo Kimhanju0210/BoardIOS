@@ -1,6 +1,6 @@
-package org.example.board.domain.repository;
+package org.example.board.domain.post.repository;
 
-import org.example.board.domain.entity.Post;
+import org.example.board.domain.post.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<Post, Long> {

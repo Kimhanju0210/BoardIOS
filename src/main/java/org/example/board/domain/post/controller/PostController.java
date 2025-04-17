@@ -1,10 +1,11 @@
-package org.example.board.domain.controller;
+package org.example.board.domain.post.controller;
 
-import org.example.board.domain.entity.Post;
-import org.example.board.domain.service.PostCreationService;
-import org.example.board.domain.service.PostDeletionService;
-import org.example.board.domain.service.PostRetrievalService;
-import org.example.board.domain.service.PostUpdateService;
+import lombok.RequiredArgsConstructor;
+import org.example.board.domain.post.entity.Post;
+import org.example.board.domain.post.service.PostCreationService;
+import org.example.board.domain.post.service.PostDeletionService;
+import org.example.board.domain.post.service.PostRetrievalService;
+import org.example.board.domain.post.service.PostUpdateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,20 +15,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/posts")
+@RequiredArgsConstructor
 public class PostController {
 
     private final PostRetrievalService postRetrievalService;
     private final PostCreationService postCreationService;
     private final PostUpdateService postUpdateService;
     private final PostDeletionService postDeletionService;
-
-    public PostController(PostRetrievalService postRetrievalService, PostCreationService postCreationService,
-                          PostUpdateService postUpdateService, PostDeletionService postDeletionService) {
-        this.postRetrievalService = postRetrievalService;
-        this.postCreationService = postCreationService;
-        this.postUpdateService = postUpdateService;
-        this.postDeletionService = postDeletionService;
-    }
 
     @GetMapping
     public List<Post> getAllPosts() {
@@ -60,5 +54,4 @@ public class PostController {
         postDeletionService.deletePost(id);
         return ResponseEntity.noContent().build();
     }
-
 }
